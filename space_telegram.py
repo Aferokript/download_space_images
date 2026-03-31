@@ -22,6 +22,7 @@ def main():
                         help='Путь к фото для отправки')
     parser.add_argument('--chat_id', default='@your_channel',
                         help='ID чата Telegram')
+    parser.add_argument('--interval', type=int, default=4, help='Интервал в часах')
 
     args = parser.parse_args()
 
@@ -36,7 +37,8 @@ def main():
         send_photo(
             bot_token=telegram_token,
             chat_id=args.chat_id,
-            photo_path=args.photo
+            interval=args.interval
+
         )
 
 
